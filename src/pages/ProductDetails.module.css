@@ -1,0 +1,113 @@
+.header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--text-dark);
+}
+
+.detailsCard {
+    background: var(--bg-light);
+    /* Or very light grey */
+    border-radius: 30px;
+    padding: 2rem;
+    box-shadow: var(--shadow-card);
+    position: relative;
+    overflow: hidden;
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 2rem;
+}
+
+.categoryBadge {
+    background: var(--primary-color);
+    color: white;
+    padding: 0.5rem 2rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.contentWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .contentWrapper {
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+.imageSection {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.imagePlaceholder {
+    width: 300px;
+    height: 400px;
+    background: #fff;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #eee;
+    font-size: 1.2rem;
+    color: #aaa;
+}
+
+.infoSection {
+    flex: 1;
+    text-align: right;
+    /* Arabic Layout */
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.infoBlock h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--black);
+}
+
+.infoBlock p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 0.2rem;
+}
+
+.price {
+    font-size: 1.5rem !important;
+    color: var(--primary-color) !important;
+    font-weight: 700;
+}
+
+.addToCartBtn {
+    background: var(--primary-color);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-top: 1rem;
+    align-self: flex-end;
+    /* Or flex-start if left aligned */
+    transition: opacity 0.3s;
+}
+
+.addToCartBtn:hover {
+    opacity: 0.9;
+}

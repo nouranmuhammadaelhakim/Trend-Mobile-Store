@@ -1,0 +1,115 @@
+.navbar {
+    height: 80px;
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+}
+
+.navContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    font-family: 'Outfit', sans-serif;
+    /* Assuming a font, need to import later or use fallback */
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--text-dark);
+}
+
+.navLinks {
+    display: none;
+    /* Hidden on mobile/default as per "menu button" requirement implies mobile-first logic or hamburger preference? 
+                   Actually design image 2 shows links visible. 
+                   I will make them visible on desktop, hidden on mobile. */
+}
+
+@media (min-width: 768px) {
+    .navLinks {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .navLinks a {
+        color: var(--text-dark);
+        font-weight: 500;
+        transition: color 0.3s;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+    }
+
+    .navLinks a:hover {
+        color: var(--primary-color);
+    }
+
+    .menuBtn {
+        display: none;
+        /* Hide hamburger on desktop? User asked for hamburger menu.*/
+    }
+}
+
+/* User specifically asked for: "a menu button beside the cart button which opens the hamburger menu" 
+   This might imply the hamburger is ALWAYS there or just on mobile. 
+   Usually designing for "Mobile Store Website" implies mobile priority.
+   But design images show desktop-like width.
+   I'll keep NavLinks hidden for smaller screens and show Hamburger.
+   For larger screens, I'll show NavLinks AND Hamburger if requested, OR just NavLinks.
+   Given "a menu button... which opens the hamburger menu... and another option within it", I'll enable Hamburger for Mobile primarily.
+   But strictly following "menu button beside cart button", I will keep it visible on mobile/tablet.
+   Let's keep it simple: Desktop -> Links visible. Mobile -> Hamburger visible.
+*/
+
+.navIcons {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.iconBtn {
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menuBtn {
+    font-size: 1.4rem;
+    color: var(--text-dark);
+    display: block;
+    /* Always show if user wants it always? Let's hide on large desktop if links are there, unless explicitly asked. */
+}
+
+@media (min-width: 900px) {
+    .menuBtn {
+        display: none;
+    }
+}
+
+.badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 0.7rem;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,0 +1,109 @@
+.card {
+    background: white;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    transition: all 0.3s ease;
+    min-width: 250px;
+    /* For scroll containers */
+    margin: 10px;
+}
+
+.card:hover {
+    box-shadow: var(--shadow-hover);
+}
+
+.imageContainer {
+    position: relative;
+    height: 250px;
+    background: #f8f8f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.placeholderImage {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ccc;
+    text-align: center;
+    padding: 1rem;
+}
+
+.badgeNew {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--primary-color);
+    color: white;
+    font-size: 0.7rem;
+    padding: 4px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.actions {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.card:hover .actions {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+.actionBtn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: white;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s;
+}
+
+.actionBtn:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+.details {
+    padding: 1.5rem;
+}
+
+.tag {
+    font-size: 0.75rem;
+    color: #888;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.title {
+    display: block;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+    text-decoration: none;
+}
+
+.title:hover {
+    color: var(--primary-color);
+}
+
+.price {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}

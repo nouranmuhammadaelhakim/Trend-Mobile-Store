@@ -1,0 +1,17 @@
+.titleWrapper {
+    margin-bottom: 3rem;
+    text-align: left;
+}
+
+.titleWrapper h2 {
+    font-size: 2rem;
+    color: #333;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.titleWrapper p {
+    color: #888;
+    font-size: 0.9rem;
+}

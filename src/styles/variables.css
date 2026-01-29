@@ -1,0 +1,20 @@
+:root {
+  --primary-color: #4B006E;
+  --primary-light: #6A1B9A;
+  --secondary-color: #9C27B0;
+  --accent-color: #E1BEE7;
+  --text-dark: #1A1A1A;
+  --text-gray: #666666;
+  --bg-light: #F5F5F5;
+  --bg-white: #FFFFFF;
+  --white: #FFFFFF;
+  --black: #000000;
+  
+  --font-main: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --shadow-card: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 10px 15px rgba(0, 0, 0, 0.2);
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  
+  --transition: all 0.3s ease;
+}

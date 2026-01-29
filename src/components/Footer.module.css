@@ -1,0 +1,115 @@
+.footer {
+    background-color: #BDBDBD;
+    /* Grayish background from design */
+    padding: 3rem 0;
+    color: white;
+    background-image: linear-gradient(to right, #a0a0a0, #d0d0d0);
+    /* Gradient effect */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Add some wave/curve decoration if possible, or keep simple for now */
+
+.footerContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .footerContainer {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.brandSection {
+    flex: 1;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.logo span {
+    color: var(--primary-color);
+}
+
+.storeBadge {
+    font-size: 0.8rem;
+    background: var(--primary-color);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.tagline {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: white;
+    /* Or maybe dark grey depending on contrast */
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.socialIcons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.socialLink {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.infoSection {
+    flex: 1.5;
+    display: flex;
+    justify-content: flex-end;
+    gap: 2rem;
+    flex-wrap: wrap;
+    text-align: right;
+    /* Maintain Arabic alignment style */
+}
+
+.addressBox,
+.contactBox {
+    color: white;
+}
+
+.addressBox h3,
+.contactBox h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.mapBox {
+    width: 150px;
+    height: 80px;
+    background: #eee;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.mapPlaceholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+}
