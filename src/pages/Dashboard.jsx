@@ -3,7 +3,15 @@ import { useUser } from '@clerk/clerk-react';
 import styles from './Dashboard.module.css';
 
 const Dashboard = () => {
-    const { user } = useUser();
+    let user = null;
+    
+    try {
+        const clerkUser = useUser();
+        user = clerkUser.user;
+    } catch (error) {
+        // Clerk not configured
+    }
+
     const [activeTab, setActiveTab] = useState('overview');
 
     // Mock orders data - in production, fetch from backend

@@ -26,7 +26,7 @@ import ManageHome from './pages/admin/ManageHome';
 import ManageBanners from './pages/admin/ManageBanners';
 import ManageOrders from './pages/admin/ManageOrders';
 
-const clerkPubKey = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
+const clerkPubKey = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY || '';
 
 const AppContent = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -130,7 +130,18 @@ const AppContent = () => {
 };
 
 const App = () => {
-  return (
+  // Only use ClerkProvider if API key is configured
+  const hasClerkKey = Boolean(
+    clerkPubKey && 
+    clerkPubKey.startsWith('pk_') && 
+    !clerkPubKey.includes('your_clerk')
+  );
+
+  if (!hasClerkKey) {
+    console.warn('Clerk API key not configured. Authentication features will be limited. Configure your .env.local file to enable authentication.');
+  }
+
+  const AppWrapper = hasClerkKey ? (
     <ClerkProvider publishableKey={clerkPubKey}>
       <DataProvider>
         <CartProvider>
@@ -140,7 +151,17 @@ const App = () => {
         </CartProvider>
       </DataProvider>
     </ClerkProvider>
+  ) : (
+    <DataProvider>
+      <CartProvider>
+        <Router>
+          <AppContent />
+        </Router>
+      </CartProvider>
+    </DataProvider>
   );
+
+  return AppWrapper;
 };
 
 export default App;

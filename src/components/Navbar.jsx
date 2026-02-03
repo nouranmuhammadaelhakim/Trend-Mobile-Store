@@ -5,9 +5,20 @@ import { useUser, UserButton } from '@clerk/clerk-react';
 import styles from './Navbar.module.css';
 
 const Navbar = ({ toggleSidebar, cartItemCount }) => {
-    const { isSignedIn, user } = useUser();
-    const isAdmin = user?.publicMetadata?.role === 'admin' || 
-                    user?.emailAddresses?.[0]?.emailAddress?.includes('admin');
+    let isSignedIn = false;
+    let user = null;
+    let isAdmin = false;
+
+    try {
+        const clerkUser = useUser();
+        isSignedIn = clerkUser.isSignedIn;
+        user = clerkUser.user;
+        isAdmin = user?.publicMetadata?.role === 'admin' || 
+                  user?.emailAddresses?.[0]?.emailAddress?.includes('admin');
+    } catch (error) {
+        // Clerk not configured, use guest mode
+        console.log('Clerk not configured, running in guest mode');
+    }
 
     return (
         <nav className={styles.navbar}>

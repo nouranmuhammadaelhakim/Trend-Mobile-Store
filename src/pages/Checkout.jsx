@@ -11,7 +11,18 @@ const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY || 
 const Checkout = () => {
     const navigate = useNavigate();
     const { cartItems, clearCart } = useCart();
-    const { user, isSignedIn } = useUser();
+    
+    let user = null;
+    let isSignedIn = false;
+    
+    try {
+        const clerkUser = useUser();
+        user = clerkUser.user;
+        isSignedIn = clerkUser.isSignedIn;
+    } catch (error) {
+        // Clerk not configured
+    }
+
     const [processing, setProcessing] = useState(false);
     const [formData, setFormData] = useState({
         email: user?.primaryEmailAddress?.emailAddress || '',

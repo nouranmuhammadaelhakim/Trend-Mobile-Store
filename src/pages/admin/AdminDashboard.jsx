@@ -7,7 +7,15 @@ import styles from './AdminDashboard.module.css';
 
 const AdminDashboard = () => {
     const navigate = useNavigate();
-    const { user } = useUser();
+    let user = null;
+    
+    try {
+        const clerkUser = useUser();
+        user = clerkUser.user;
+    } catch (error) {
+        // Clerk not configured
+    }
+
     const { products, categories, usingStrapiData } = useData();
     const [dropdownOpen, setDropdownOpen] = useState(false);
 
