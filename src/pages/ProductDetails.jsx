@@ -1,12 +1,13 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
-import { products } from '../data/mockData';
+import { useData } from '../context/DataContext';
 import styles from './ProductDetails.module.css';
 
 const ProductDetails = () => {
     const { id } = useParams();
     const { addToCart } = useCart();
+    const { products } = useData();
 
     const product = products.find(p => p.id === parseInt(id));
 
@@ -37,7 +38,7 @@ const ProductDetails = () => {
                     <div className={styles.infoSection}>
                         <div className={styles.infoBlock}>
                             <h3>: الوصف</h3>
-                            <p>جراب Iphone 15 pro max الوان</p> {/* Static Arabic description as example */}
+                            <p>{product.description || 'جراب Iphone 15 pro max الوان'}</p> {/* Static Arabic description as example */}
                         </div>
 
                         <div className={styles.infoBlock}>

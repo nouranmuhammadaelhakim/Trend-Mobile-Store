@@ -2,11 +2,12 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
 import SectionTitle from '../components/SectionTitle';
-import { products } from '../data/mockData';
+import { useData } from '../context/DataContext';
 import styles from './CategoryPage.module.css';
 
 const CategoryPage = () => {
     const { category } = useParams();
+    const { products } = useData();
 
     // Normalize category string for comparison if needed, or matched exactly
     // "all" shows everything
