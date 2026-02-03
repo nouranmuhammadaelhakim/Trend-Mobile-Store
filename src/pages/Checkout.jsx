@@ -2,11 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { useUser } from '@clerk/clerk-react';
-import { loadStripe } from '@stripe/stripe-js';
 import styles from './Checkout.module.css';
-
-// Initialize Stripe
-const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY || '');
 
 const Checkout = () => {
     const navigate = useNavigate();
@@ -19,7 +15,7 @@ const Checkout = () => {
         const clerkUser = useUser();
         user = clerkUser.user;
         isSignedIn = clerkUser.isSignedIn;
-    } catch (error) {
+    } catch {
         // Clerk not configured
     }
 

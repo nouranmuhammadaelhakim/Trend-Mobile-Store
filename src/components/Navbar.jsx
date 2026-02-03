@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaShoppingCart, FaUser, FaBars } from 'react-icons/fa';
 import { useUser, UserButton } from '@clerk/clerk-react';
@@ -15,7 +15,7 @@ const Navbar = ({ toggleSidebar, cartItemCount }) => {
         user = clerkUser.user;
         isAdmin = user?.publicMetadata?.role === 'admin' || 
                   user?.emailAddresses?.[0]?.emailAddress?.includes('admin');
-    } catch (error) {
+    } catch {
         // Clerk not configured, use guest mode
         console.log('Clerk not configured, running in guest mode');
     }

@@ -11,7 +11,7 @@ const ProtectedRoute = ({ children, requireAdmin = false }) => {
         isSignedIn = clerkUser.isSignedIn;
         user = clerkUser.user;
         isLoaded = clerkUser.isLoaded;
-    } catch (error) {
+    } catch {
         // Clerk not configured - show message
         return (
             <div style={{ 

@@ -12,7 +12,7 @@ const AdminDashboard = () => {
     try {
         const clerkUser = useUser();
         user = clerkUser.user;
-    } catch (error) {
+    } catch {
         // Clerk not configured
     }
 
