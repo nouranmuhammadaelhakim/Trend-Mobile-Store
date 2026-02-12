@@ -5,12 +5,13 @@ import SectionTitle from '../components/SectionTitle';
 import CategoryCard from '../components/CategoryCard';
 import ProductCard from '../components/ProductCard';
 import Banner from '../components/Banner';
-import { categories, products } from '../data/mockData';
+import { useData } from '../context/DataContext';
 import styles from './Home.module.css';
 
 const Home = () => {
     const newArrivalRef = useRef(null);
     const bestSellerRef = useRef(null);
+    const { products, categories } = useData();
 
     const scrollLeft = (ref) => {
         ref.current.scrollBy({ left: -300, behavior: 'smooth' });
