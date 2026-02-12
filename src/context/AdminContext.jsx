@@ -14,7 +14,12 @@ export const AdminProvider = ({ children }) => {
   const [isAdminAuthenticated, setIsAdminAuthenticated] = useState(false);
 
   const login = (username, password) => {
-    // Simple authentication - in production, this should use proper backend authentication
+    // NOTE: This is a simple demonstration authentication for prototype purposes only.
+    // In production, implement proper backend authentication with:
+    // - Secure credential storage (hashed passwords in database)
+    // - Token-based authentication (JWT)
+    // - HTTPS-only communication
+    // - Session management with httpOnly cookies
     if (username === 'admin' && password === 'admin123') {
       setIsAdminAuthenticated(true);
       return true;

@@ -15,7 +15,7 @@ const Admin = () => {
     if (success) {
       setError('');
     } else {
-      setError('Invalid credentials. Use admin/admin123');
+      setError('Invalid username or password');
     }
   };
 
