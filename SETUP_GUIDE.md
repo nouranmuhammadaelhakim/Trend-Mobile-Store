@@ -18,6 +18,13 @@ VITE_CLERK_PUBLISHABLE_KEY=pk_test_your_key_here
 VITE_STRAPI_API_URL=https://your-strapi-instance.strapi.io
 VITE_STRAPI_API_TOKEN=your_token_here
 
+# Admin Projects Proxy (server-side)
+STRAPI_API_URL=http://localhost:1337
+STATIC_API_TOKEN=your_static_token_here
+ADMIN_API_PORT=4170
+ADMIN_APP_ORIGIN=http://localhost:5173
+VITE_ADMIN_API_URL=http://localhost:4170
+
 # Stripe Payment (Optional)
 VITE_STRIPE_PUBLISHABLE_KEY=pk_test_your_key_here
 ```
@@ -25,6 +32,11 @@ VITE_STRIPE_PUBLISHABLE_KEY=pk_test_your_key_here
 ### 3. Run Development Server
 ```bash
 npm run dev
+```
+
+Start the admin API proxy in a separate terminal:
+```bash
+npm run dev:admin-api
 ```
 
 Visit http://localhost:5173
@@ -66,6 +78,7 @@ Navigate to `/admin` (requires admin login)
 - **Categories** - Manage product categories
 - **Orders** - View and process orders
 - **Banners** - Manage promotional banners
+- **Projects** - Manage portfolio projects
 
 ### Product Management (/admin/manage/products)
 - View all products in grid layout
@@ -112,6 +125,11 @@ Visit https://cloud.strapi.io and create a project
 - `image` (Text - URL)
 - `icon` (Text)
 - `link` (Text)
+
+**Project Content Type:**
+- `title` (Text, required)
+- `description` (Rich Text or Text)
+- `image` (Media - single image)
 
 ### 3. Generate API Token
 1. Go to Settings → API Tokens

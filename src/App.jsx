@@ -25,6 +25,7 @@ import ManageCategories from './pages/admin/ManageCategories';
 import ManageHome from './pages/admin/ManageHome';
 import ManageBanners from './pages/admin/ManageBanners';
 import ManageOrders from './pages/admin/ManageOrders';
+import AdminProjects from './pages/admin/AdminProjects';
 
 const clerkPubKey = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY || '';
 
@@ -118,6 +119,14 @@ const AppContent = () => {
             element={
               <ProtectedRoute requireAdmin={true}>
                 <ManageOrders />
+              </ProtectedRoute>
+            } 
+          />
+          <Route 
+            path="/admin-projects" 
+            element={
+              <ProtectedRoute requireAdmin={true}>
+                <AdminProjects />
               </ProtectedRoute>
             } 
           />

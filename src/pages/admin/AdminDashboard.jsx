@@ -49,6 +49,12 @@ const AdminDashboard = () => {
             title: 'Banners',
             description: 'Manage promotional banners',
             path: '/admin/manage/banners'
+        },
+        {
+            id: 'projects',
+            title: 'Projects',
+            description: 'Manage portfolio projects',
+            path: '/admin-projects'
         }
     ];
 

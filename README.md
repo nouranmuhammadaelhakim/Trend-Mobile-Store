@@ -66,6 +66,13 @@ VITE_CLERK_PUBLISHABLE_KEY=pk_test_your_clerk_key_here
 VITE_STRAPI_API_URL=https://your-strapi-instance.strapi.io
 VITE_STRAPI_API_TOKEN=your_strapi_token_here
 
+# Admin Projects Proxy (server-side)
+STRAPI_API_URL=http://localhost:1337
+STATIC_API_TOKEN=your_static_token_here
+ADMIN_API_PORT=4170
+ADMIN_APP_ORIGIN=http://localhost:5173
+VITE_ADMIN_API_URL=http://localhost:4170
+
 # Stripe Payment
 VITE_STRIPE_PUBLISHABLE_KEY=pk_test_your_stripe_key_here
 ```
@@ -107,6 +114,11 @@ VITE_STRIPE_PUBLISHABLE_KEY=pk_test_your_stripe_key_here
 - `icon` (Text)
 - `link` (Text)
 
+**Project Content Type:**
+- `title` (Text, required)
+- `description` (Rich Text or Text)
+- `image` (Media - single image)
+
 4. Generate API Token:
    - Go to Settings → API Tokens
    - Create a new token with `Read` and `Write` permissions
@@ -121,6 +133,11 @@ VITE_STRIPE_PUBLISHABLE_KEY=pk_test_your_stripe_key_here
 ### 5. Run the Development Server
 ```bash
 npm run dev
+```
+
+Start the admin API proxy in a separate terminal:
+```bash
+npm run dev:admin-api
 ```
 
 The application will be available at `http://localhost:5173`
@@ -182,6 +199,7 @@ The admin dashboard provides a **dropdown menu** to navigate between:
 - **Categories**: Manage product categories
 - **Orders**: View and process customer orders
 - **Banners**: Manage promotional banners
+- **Projects**: Manage portfolio projects
 
 ### Adding Products
 
