@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_layout_banner_s",
+  "info": {
+    "displayName": "Banner "
+  },
+  "options": {},
+  "attributes": {
+    "isVisible": {
+      "type": "boolean",
+      "default": false
+    },
+    "Link": {
+      "type": "component",
+      "component": "shared.link",
+      "repeatable": true
+    },
+    "Description": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

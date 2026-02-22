@@ -17,6 +17,21 @@
     },
     "Description": {
       "type": "text"
+    },
+    "Banner": {
+      "type": "component",
+      "component": "layout.banner",
+      "repeatable": true
+    },
+    "header": {
+      "type": "component",
+      "component": "layout.header",
+      "repeatable": false
+    },
+    "footer": {
+      "type": "component",
+      "component": "layout.footer",
+      "repeatable": false
     }
   }
 }
